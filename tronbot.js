@@ -7,15 +7,13 @@ const axios = require('axios');
 
 const token = ''; // Ключ Телеграм Бота
 let secretKey = ''; // Ваш Секретный ключ шифрования Файла [Запомните его, вы можете записать его прямо тут или же отправлять в сообщении при первом запуске программы]
-
+const targetUserId = 0; // Ваш Telegram id (будут приниматься сообщения только от указанного пользователя).
 
 const USDT_CONTRACT_ADDRESS = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"; // Адрес кошелька контракта для USDT (не менять) https://tronscan.org/#/token20/TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t/code 
 const HttpProvider = TronWeb.providers.HttpProvider;
 const fullNode = new HttpProvider('https://api.trongrid.io');
 const solidityNode = new HttpProvider('https://api.trongrid.io');
 const eventServer = 'https://api.trongrid.io';
-
-const targetUserId = 0; // Ваш Telegram id (будут приниматься сообщения только от указанного пользователя).
 
 // Создайте новый телеграм-бот
 const bot = new TelegramBot(token, { polling: true });
